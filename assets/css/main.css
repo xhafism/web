@@ -1,0 +1,64 @@
+
+
+/* Main CSS for Hafiffi Ismail Portfolio Site */
+
+body {
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #0af;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0cf;
+}
+
+h1, h2 {
+    margin: 0.5em 0;
+}
+
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.links {
+    margin-top: 1rem;
+}
+
+.links a {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.portfolio ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.portfolio ul li {
+    padding: 0.3em 0;
+}
+
+.skills {
+    margin-top: 2rem;
+}
+
+.skills label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #888;
+}
