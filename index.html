@@ -16,7 +16,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             text-align: center;
         }
         .container {
@@ -46,60 +45,114 @@
             font-size: 0.8rem;
             color: #666;
         }
+
+        body {
+            background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #0f0f0f, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientBackground 20s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container, .portfolio, .skills {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .portfolio {
+            animation-delay: 0.5s;
+        }
+
+        .skills {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hafiffi Ismail</h1>
-        <p class="subtitle">IT Executive at IIUM Holdings | Infrastructure & Systems Expert</p>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/hafiffi-ismail-b9a40b7b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/xhafism" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:eppiey@live.co.uk" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/haf.ism" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -2;"></div>
+    <div id="parallax" style="position: fixed; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, transparent 70%);"></div>
+    <div id="content">
+        <div class="container">
+            <h1>Hafiffi Ismail</h1>
+            <p class="subtitle">IT Executive at IIUM Holdings | Infrastructure & Systems Expert</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/hafiffi-ismail-b9a40b7b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/xhafism" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:eppiey@live.co.uk" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/haf.ism" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-    </div>
 
-    <div class="portfolio">
-        <h2>Selected Projects</h2>
-        <ul style="list-style: none; padding: 0; font-size: 1rem; text-align: left; max-width: 600px; margin: 1rem auto;">
-            <li><i class="fas fa-circle-check" style="color:#0af;"></i> Microsoft 365 Implementation for IIUM Holdings</li>
-            <li><i class="fas fa-circle-check" style="color:#0af;"></i> VPN & Remote Access for File Server</li>
-            <li><i class="fas fa-circle-check" style="color:#0af;"></i> Ubiquiti AP Upgrade for IIUM Schools</li>
-            <li><i class="fas fa-circle-check" style="color:#0af;"></i> Proxmox Server Setup with Docker (Snipe-IT, Guacamole, etc.)</li>
-            <li><i class="fas fa-circle-check" style="color:#0af;"></i> Laravel Vendor Management System with Tender Module</li>
-        </ul>
-    </div>
+        <div class="portfolio">
+            <h2>Selected Projects</h2>
+            <ul style="list-style: none; padding: 0; font-size: 1rem; text-align: left; max-width: 600px; margin: 1rem auto;">
+                <li><i class="fas fa-circle-check" style="color:#0af;"></i> Microsoft 365 Implementation for IIUM Holdings</li>
+                <li><i class="fas fa-circle-check" style="color:#0af;"></i> VPN & Remote Access for File Server</li>
+                <li><i class="fas fa-circle-check" style="color:#0af;"></i> Ubiquiti AP Upgrade for IIUM Schools</li>
+                <li><i class="fas fa-circle-check" style="color:#0af;"></i> Proxmox Server Setup with Docker (Snipe-IT, Guacamole, etc.)</li>
+                <li><i class="fas fa-circle-check" style="color:#0af;"></i> Laravel Vendor Management System with Tender Module</li>
+            </ul>
+        </div>
 
-    <div class="skills" style="margin-top: 2rem; max-width: 600px; width: 100%;">
-        <h2>My Strengths</h2>
-        <div style="margin-bottom: 1rem;">
-            <label>Networking & Firewalls (Fortinet, Sophos)</label>
-            <div style="background: #333; height: 20px; border-radius: 10px;">
-                <div style="width: 90%; background: #0af; height: 100%; border-radius: 10px;"></div>
+        <div class="skills" style="margin-top: 2rem; max-width: 600px; width: 100%;">
+            <h2>My Strengths</h2>
+            <div style="margin-bottom: 1rem;">
+                <label>Networking & Firewalls (Fortinet, Sophos)</label>
+                <div style="background: #333; height: 20px; border-radius: 10px;">
+                    <div style="width: 90%; background: #0af; height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label>Cloud Services & Microsoft 365</label>
+                <div style="background: #333; height: 20px; border-radius: 10px;">
+                    <div style="width: 85%; background: #0af; height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label>Linux Server & Virtualization</label>
+                <div style="background: #333; height: 20px; border-radius: 10px;">
+                    <div style="width: 80%; background: #0af; height: 100%; border-radius: 10px;"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label>Laravel & Web Development</label>
+                <div style="background: #333; height: 20px; border-radius: 10px;">
+                    <div style="width: 75%; background: #0af; height: 100%; border-radius: 10px;"></div>
+                </div>
             </div>
         </div>
-        <div style="margin-bottom: 1rem;">
-            <label>Cloud Services & Microsoft 365</label>
-            <div style="background: #333; height: 20px; border-radius: 10px;">
-                <div style="width: 85%; background: #0af; height: 100%; border-radius: 10px;"></div>
-            </div>
-        </div>
-        <div style="margin-bottom: 1rem;">
-            <label>Linux Server & Virtualization</label>
-            <div style="background: #333; height: 20px; border-radius: 10px;">
-                <div style="width: 80%; background: #0af; height: 100%; border-radius: 10px;"></div>
-            </div>
-        </div>
-        <div style="margin-bottom: 1rem;">
-            <label>Laravel & Web Development</label>
-            <div style="background: #333; height: 20px; border-radius: 10px;">
-                <div style="width: 75%; background: #0af; height: 100%; border-radius: 10px;"></div>
-            </div>
-        </div>
+        <footer>
+            &copy; 2025 Hafiffi Ismail.
+        </footer>
     </div>
-    <footer>
-        &copy; 2025 Hafiffi Ismail.
-    </footer>
+    <script>
+    tsParticles.load("particles-js", {
+        fullScreen: false,
+        background: {
+            color: "transparent"
+        },
+        particles: {
+            number: { value: 60 },
+            color: { value: "#0af" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5 },
+            size: { value: 2 },
+            move: { enable: true, speed: 1 }
+        }
+    });
+    </script>
 </body>
 </html>
